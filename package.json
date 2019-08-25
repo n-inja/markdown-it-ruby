@@ -4,7 +4,7 @@
   "description": "add ruby syntax to markdown-it",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/n-inja/markdown-it-ruby/issues"
   },
-  "homepage": "https://github.com/n-inja/markdown-it-ruby#readme"
+  "homepage": "https://github.com/n-inja/markdown-it-ruby#readme",
+  "devDependencies": {
+    "markdown-it": "^9.1.0"
+  }
 }
