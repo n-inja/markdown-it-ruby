@@ -8,6 +8,7 @@ const LBRACE = '{'.charCodeAt(0)
 const RBRACE = '}'.charCodeAt(0)
 const LPAREN = '('.charCodeAt(0)
 const RPAREN = ')'.charCodeAt(0)
+const BSLASH = '\\'.charCodeAt(0)
 
 // parse {hoge}(huga) -> <ruby>hoge<rt><huga/rt></ruby>
 function ruby (state, silent) {
@@ -72,6 +73,10 @@ function findCorresponds(state, pos, LCODE, RCODE) {
 
   while(pos < state.posMax) {
     const code = state.src.charCodeAt(pos)
+    if (code === BSLASH) {
+      pos += 2
+      continue
+    }
     if (code === RCODE) {
       level--
       if (level === 0) {
